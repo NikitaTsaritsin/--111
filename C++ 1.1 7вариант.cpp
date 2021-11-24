@@ -2,15 +2,25 @@
 #include <cmath>
 using namespace std;
 
-int main(){
-    double x = 0.5; double y = 0.05; double z = 0.7;
-    double a, b;
-    
-    a = (pow(x,2)*(x+1))/(y-((1-cos(x+z))/2));
-    b = sqrt((x*y)/z)+((1+cos(pow(x+y,2)))/2);
-    
+double functionOne(double x, y, z){
+    return (pow(x,2)*(x+1))/(y-((1-cos(x+z))/2));
+}
+
+double functionTwo(double x, y, z){
+    return sqrt((x*y)/z)+((1+cos(pow(x+y,2)))/2);
+}
+
+void output(double x, y, z){
     cout << "x=" << x << " y=" << y << " z=" << z << endl;
-    cout << "a=" << a << " b=" << b << endl << endl;
+    cout << "a=" << functionOne(x, y, z) << endl; 
+    cout << "b=" << functionTwo(x, y, z) << endl; 
+}
+
+int main(){
+    const double x = 0.5; 
+    const double y = 0.05; 
+    const double z = 0.7;
+    output(x, y, z);
 
     return 0;
 }
