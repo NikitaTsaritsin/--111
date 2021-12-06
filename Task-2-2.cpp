@@ -1,20 +1,19 @@
 #include <iostream>
-#include <math.h>
 #include <cmath>
 using namespace std;
 
-double first(double a, double x){
+double first(const double a, const double x){
     return a - log10(a*x);
 }
-double second(double a, double x){
+double second(const double a, const double x){
     return a + log10(a*x);
 }
 
-double output(double a, double x, int f){
+double output(const double a, const double x, const int f){
     double out = (f==0 ? first(a,x) : second(a,x));
     return out;
 }
-int func(double a, double x){
+int func(const double a, const double x){
     int f = 0;
     if(a*x >= 1) f++;
     return f;
