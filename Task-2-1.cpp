@@ -1,20 +1,70 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
 
-double func(const double A, const double N, const int score){
-    double out = A*(score*N); 
-    cout << "A" << score << " = " << out << endl; 
-    return out; 
-}
+/**
+ * \brief 
+ */
+enum class Operation
+{
+    /**
+     * \brief 
+     */
+    one,
+
+     /**
+      * \brief 
+      */
+    two,
+
+     /**
+      * \brief 
+      */
+    three
+};
+
+void oneMultiplication(double &a, const double n);
+
+void twoMultiplication(double &a, const double n);
+
+void threeMultiplication(double &a, const double n);
 
 int main(){
-    double A, N;                                            
-    cout << "Введите переменные A и N соответственно: ";    
-    cin >> A >> N;                                          
+    double a, n; int score;
+    cout << "Введите число A: "; cin >> a;
+    cout << "Введите число N: "; cin >> n;
+    cout << "Введите кол-во операций (1-3): "; cin >> score;
+    
+    switch(score-1){
+        case static_cast<int>(Operation::one):{
+            oneMultiplication(a, n);
+            break;
+        }
+        case static_cast<int>(Operation::two):{
+            twoMultiplication(a, n);
+            break;
+        }
+        case static_cast<int>(Operation::three):{
+            threeMultiplication(a, n);
+            break;
+        }
+        default:
+            cout << "Ошибка";
+    }
+    cout << "Результат " << n << " операций: " << a << endl;
 
-    A = func(A, N, 1); 
-    A = func(A, N, 2); 
-    A = func(A, N, 3); 
-  
     return 0;
+}
+
+void oneMultiplication(double &a, const double n){
+    a = a*n;
+}
+
+void twoMultiplication(double &a, const double n){
+    a = a*(2*n);
+}
+
+void threeMultiplication(double &a, const double n){
+    a = a*(3*n);
 }
