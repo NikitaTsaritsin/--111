@@ -24,8 +24,6 @@ double functionTwo(const double x, const double y, const double z);
  * \brief Точка входа в программу
  * \return 0  в случае успеха
  */
-
-
 int main(){ 
     const double x = 0.5;  
     const double y = 0.05; 
@@ -38,9 +36,9 @@ int main(){
 }
 
 double functionOne(const double x, const double y, const double z){ 
-    return (pow(x,2)*(x+1))/(y-((1-cos(x+z))/2)); 
+    return (pow(x,2) * (x + 1)) / (y - ((1 - cos(x + z)) / 2)); 
 } 
 
 double functionTwo(const double x, const double y, const double z){ 
-    return sqrt((x*y)/z)+((1+cos(pow(x+y,2)))/2); 
+    return sqrt((x * y) / z) + ((1 + cos(pow (x + y,2))) / 2); 
 } 
