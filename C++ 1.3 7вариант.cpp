@@ -9,14 +9,13 @@ using namespace std;
  \brief Рассчитывает сопротивление провода
  \param p сопротивление
  \param length длина провода
- \param Square площадь поперечного сечения
+ \param square площадь поперечного сечения
  \return Рассчитаем сопротивление провода
  */
-double getresistance(const double p, const double length, const double Square);
+double getresistance(const double p, const double length, const double square);
 
 /**
 \brief Точка входа в программу
-\param p сопротивление Алюминия = (0.028 Ом*мм^2)/м
 \return В случае успеха возвращаем 0
 */
 int main()
@@ -28,16 +27,16 @@ int main()
     cin >> length;
 
     cout << "Введите площадь поперечного сечения = ";
-    double Square;
-    cin >> Square;
+    double square;
+    cin >> square;
 
-    const double resistance = getresistance(p, length, Square);
+    const double resistance = getresistance(p, length, square);
     cout << "\n Сопротивление =  " << resistance << endl;
     return 0;
 }
 
 
-double getresistance(const double p, const double length, const double Square)
+double getresistance(const double p, const double length, const double square)
 {
-    return length * p / Square;
+    return length * p / square;
 }
