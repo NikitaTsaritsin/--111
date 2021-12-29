@@ -2,6 +2,33 @@
 #include <cmath>
 using namespace std;
 
+/**
+ * \brief Расчёт значения y.
+ * \param x Аргумент функции.
+ */
+void output(const double x);
+
+/**
+ * \brief Табулирование функции.
+ * \param x Аргумент функции.
+ * \param border Максимальное значение аргумента.
+ */
+void func(double x, const double border, const double s);
+
+/**
+ * \brief Точка входа в программу.
+ * \return Возвращает 0 в случае успеха.
+ */
+int main(){
+    const double x = 0;         
+    const double border = 1;        
+    const double step = 0.1;    
+
+    func(x,border,step); 
+
+    return 0;
+}
+
 void output(const double x){
     try{ 
         double y;
@@ -12,21 +39,11 @@ void output(const double x){
     }
 }
 
-void func(double x, const double x2, const double s){
-    while (x != (x2 + s)-1){    
-        if (x <= x2){           
+void func(double x, const double border, const double s){
+    while (x != (border + s)-1){    
+        if (x <= border){           
             output(x);          
             x += s;             
         }
     }
-}
-
-int main(){
-    const double x = 0;         
-    const double x2 = 1;        
-    const double stap = 0.1;    
-
-    func(x,x2,stap); 
-
-    return 0;
 }
