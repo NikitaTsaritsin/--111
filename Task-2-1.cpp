@@ -50,12 +50,20 @@ void threeMultiplication(double a, double n);
 int main() 
 {
     setlocale(LC_ALL, "Russian");
-    double a, n; int score;
-    cout << "Введите число A: "; cin >> a;
-    cout << "Введите число N: "; cin >> n;
-    cout << "Введите кол-во операций (1-3): "; cin >> score;
+    double a;
+    cout << "Введите число A: ";
+    cin >> a;
+    double n;
+    cout << "Введите число N: "; 
+    cin >> n;
+    cout << "Выберите операцию:" << endl;
+    cout << " 0) a = a * n" << endl;
+	cout << " 1) a = a * (2 * n)" << endl;
+	cout << " 2) a = a * (3 * n)" << endl;
+	int score; 
+	cin >> score;
 
-    switch (score - 1) {
+    switch (score) {
     case static_cast<int>(Operation::Case1): {
         oneMultiplication(a, n);
         break;
