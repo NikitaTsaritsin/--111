@@ -153,7 +153,7 @@ void PrintElementsIndexMultiples3And6(const int* myArray, const size_t size)
 {
     cout << "\n Индексы элементов, кратных 3 и 6: ";
     for (size_t index = 1; index < size; index++) {
-        if (myArray[index] % 3 == 0 || myArray[index] % 6 == 0) {
+        if ( myArray[index] % 6 == 0) {
             cout << index << " ";
         }
     }
@@ -174,7 +174,7 @@ int SummOfNegativeElements(const int* myArray, const size_t size)
 int* ElementsToZeroAmongMinAndMax(int* myArray, const size_t size, const int maxValue, const int minValue)
 {
     if (myArray == nullptr) {
-        cout << "Массив пуст";
+        cout << "Массива не существует";
         return nullptr;
     }
 
@@ -209,11 +209,14 @@ int* ElementsToZeroAmongMinAndMax(int* myArray, const size_t size, const int max
             break;
         }
     }
-
+    
+    int* newArray = new int[size];
+    newArray = myArray;
+    
     for (firstindex = firstindex + 1; firstindex < lastindex; firstindex++) {
-        myArray[firstindex] = 0;
+        newArray[firstindex] = 0;
     }
-    return myArray;
+    return newArray;
 }
 
 void ArrayPrint(const int* myArray, const size_t size)
