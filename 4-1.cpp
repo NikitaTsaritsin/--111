@@ -11,7 +11,7 @@ using namespace std;
 size_t GetSize();
 
 /**
- * \brief Вывод индексов элементов кратных 3 и 6.
+ * \brief Вывод индексов элементов кратных 6.
  * \param myArray массив.
  * \param size размер массива.
  */
@@ -151,7 +151,7 @@ size_t GetSize()
 
 void PrintElementsIndexMultiples3And6(const int* myArray, const size_t size)
 {
-    cout << "\n Индексы элементов, кратных 3 и 6: ";
+    cout << "\n Индексы элементов, кратных 6: ";
     for (size_t index = 1; index < size; index++) {
         if ( myArray[index] % 6 == 0) {
             cout << index << " ";
