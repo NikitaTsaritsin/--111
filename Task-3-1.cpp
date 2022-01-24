@@ -35,7 +35,7 @@ void output(const double x){
         y = sqrt(1 - x) - cos(sqrt(1 - x)); 
         cout << "x = " << x << "\t\ty = " << y << endl; 
     } else { 
-        cout << "Решения нет!" << endl;
+        cout << "x = " << x << "\t\tРешения нет!" << endl;
     }
 }
 
