@@ -30,11 +30,11 @@ int main(){
 }
 
 void output(const double x){
-    try{ 
+    if (1 - x >= 0) { 
         double y;
         y = sqrt(1 - x) - cos(sqrt(1 - x)); 
         cout << "x = " << x << "\t\ty = " << y << endl; 
-    } catch (exception& e){ 
+    } else { 
         cout << "Решения нет!" << endl;
     }
 }
