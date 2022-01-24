@@ -29,19 +29,19 @@ enum class Operation
  * \param a - константа, вводимая пользователем
  * \param n - константа, вводимая пользователем
   */
-void oneMultiplication(double *a, double n);
+double oneMultiplication(double a, double n);
 /**
  * \brief функция, меняющая переменные вторым вариантом.
  * \param a - константа, вводимая пользователем
  * \param n - константа, вводимая пользователем
   */
-void twoMultiplication(double *a, double n);
+double twoMultiplication(double a, double n);
 /**
  * \brief функция, меняющая переменные третьим вариантом.
  * \param a - константа, вводимая пользователем
  * \param n - константа, вводимая пользователем
   */
-void threeMultiplication(double *a, double n);
+double threeMultiplication(double a, double n);
 
 /**
  * \brief Точка входа в программу.
@@ -65,15 +65,15 @@ int main()
 
     switch (score) {
     case static_cast<int>(Operation::Case1): {
-        oneMultiplication(&a, n);
+        a = oneMultiplication(a, n);
         break;
     }
     case static_cast<int>(Operation::Case2): {
-        twoMultiplication(&a, n);
+        a = twoMultiplication(a, n);
         break;
     }
     case static_cast<int>(Operation::Case3): {
-        threeMultiplication(&a, n);
+        a = threeMultiplication(a, n);
         break;
     }
     default:
@@ -84,14 +84,14 @@ int main()
     return 0;
 }
 
-void oneMultiplication(double *a, double n) {
-    *a = (*a) * n;
+double oneMultiplication(double a, double n) {
+    return a * n;
 }
 
-void twoMultiplication(double *a, double n) {
-    *a = (*a) * (2 * n);
+double twoMultiplication(double a, double n) {
+    return a * (2 * n);
 }
 
-void threeMultiplication(double *a, double n) {
-    *a = (*a) * (3 * n);
+double threeMultiplication(double a, double n) {
+    return a * (3 * n);
 }
