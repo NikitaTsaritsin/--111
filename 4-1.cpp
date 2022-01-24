@@ -153,7 +153,7 @@ void PrintElementsIndexMultiples3And6(const int* myArray, const size_t size)
 {
     cout << "\n Индексы элементов, кратных 6: ";
     for (size_t index = 1; index < size; index++) {
-        if ( myArray[index] % 6 == 0) {
+        if (myArray[index] % 6 == 0) {
             cout << index << " ";
         }
     }
@@ -182,7 +182,7 @@ int* ElementsToZeroAmongMinAndMax(int* myArray, const size_t size, const int max
     auto minElementIndex = 0;
     auto maxArrayValue = minValue;
     auto maxElementIndex = 0;
-    auto firstindex = 0;
+    auto firstindex = -1;
     auto lastindex = 0;
 
     for (size_t index = 0; index < size; index++) {
@@ -196,27 +196,32 @@ int* ElementsToZeroAmongMinAndMax(int* myArray, const size_t size, const int max
         }
     }
 
-    for (size_t index = 0; index < size; index++) {
+    while (firstindex == -1) {
         if (index == minElementIndex || index == maxElementIndex) {
             firstindex = index;
-            break;
         }
     }
 
-    for (size_t index = 0; index < size; index++) {
+    while (lastindex == 0) {
         if ((index == minElementIndex || index == maxElementIndex) && index != firstindex) {
             lastindex = index;
-            break;
         }
     }
-    
+
     int* newArray = new int[size];
     newArray = myArray;
-    
+
     for (firstindex = firstindex + 1; firstindex < lastindex; firstindex++) {
         newArray[firstindex] = 0;
     }
     return newArray;
+
+    if (newArray != nullptr) {
+
+        delete[] newArray;
+        newArray = nullptr;
+
+    }
 }
 
 void ArrayPrint(const int* myArray, const size_t size)
