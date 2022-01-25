@@ -57,9 +57,9 @@ int main()
     cout << "Введите число N: "; 
     cin >> n;
     cout << "Выберите операцию:" << endl;
-    cout << " " << static_cast<int>(Operation::Case1) << ") a = a * n" << endl;
-	cout << " " << static_cast<int>(Operation::Case2) << ") a = a * (2 * n)" << endl;
-	cout << " " << static_cast<int>(Operation::Case3) << ") a = a * (3 * n)" << endl;
+    cout << " 0) a = a * n" << endl;
+	cout << " 1) a = a * (2 * n)" << endl;
+	cout << " 2) a = a * (3 * n)" << endl;
 	int score; 
 	cin >> score;
 
@@ -85,13 +85,13 @@ int main()
 }
 
 double oneMultiplication(double a, double n) {
-    return a = a * n;
+    return a * n;
 }
 
 double twoMultiplication(double a, double n) {
-    return a = a * (2 * n);
+    return a * (2 * n);
 }
 
 double threeMultiplication(double a, double n) {
-    return a = a * (3 * n);
+    return a * (3 * n);
 }
