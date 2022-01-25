@@ -122,13 +122,15 @@ int main()
     PrintElementsIndexMultiples3And6(myArray, size);
 
     cout << "Заменённый массив";
-    myArray = ElementsToZeroAmongMinAndMax(myArray, size, maxValue, minValue);
-    ArrayPrint(myArray, size);
+    int* nextArray = nullptr;
+    nextArray = ElementsToZeroAmongMinAndMax(myArray, size, maxValue, minValue);
+    // myArray = ElementsToZeroAmongMinAndMax(myArray, size, maxValue, minValue);
+    ArrayPrint(nextArray, size);
 
-    if (myArray != nullptr) {
+    if (nextArray != nullptr) {
 
-        delete[] myArray;
-        myArray = nullptr;
+        delete[] nextArray;
+        nextArray = nullptr;
 
     }
     return 0;
