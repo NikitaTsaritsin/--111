@@ -40,7 +40,7 @@ void output(const double x){
 }
 
 void func(double x, const double border, const double s){
-    while (x != (border + s)-1){    
+    while (x < (border + s)-1){    
         if (x <= border){           
             output(x);          
             x += s;             
