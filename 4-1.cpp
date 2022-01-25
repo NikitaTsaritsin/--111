@@ -113,7 +113,10 @@ int main()
         break;
     }
     }
-
+    default {
+cout « "такого способа ввода нет" ;
+return 1;
+    }
     ArrayPrint(myArray, size);
 
     cout << "Сумма отрицательных элементов массива: " << SummOfNegativeElements(myArray, size);
@@ -133,6 +136,13 @@ int main()
         nextArray = nullptr;
 
     }
+
+    if (myArray != nullptr) {
+
+        delete[] myArray;
+        myArray = nullptr;
+        }
+    
     return 0;
 
 }
@@ -217,13 +227,7 @@ int* ElementsToZeroAmongMinAndMax(int* myArray, const size_t size, const int max
         newArray[firstindex] = 0;
     }
     return newArray;
-
-    if (newArray != nullptr) {
-
-        delete[] newArray;
-        newArray = nullptr;
-
-    }
+ 
 }
 
 void ArrayPrint(const int* myArray, const size_t size)
